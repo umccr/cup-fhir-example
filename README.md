@@ -43,20 +43,14 @@ In JupyterLab, open `notebooks/01_explore_fhir_bundles.ipynb` and check that the
 
 `pip install -e` installs the package in editable mode, so changes to the files in `src/cup_fhir/` take effect without reinstalling. The notebook also turns on `autoreload`, so you don't even need to restart the kernel.
 
-### Option B: on a hosted Jupyter (JupyterHub, SageMaker, etc.)
+### Option B: on a hosted Jupyter (Seqera Studios, JupyterHub, SageMaker, etc.)
 
-Open a terminal from the Jupyter launcher, then run:
+Clone the repo into your workspace and open the notebook. The first code cell checks for `cup_fhir`. If it isn't installed, the cell installs it and its dependencies into the notebook's own Python, so there's nothing to set up by hand. You may see *"you may need to restart the kernel"*. You can ignore it: the cell handles that for the current session.
+
+To install it yourself instead, run this in the same environment the kernel uses:
 
 ```bash
-git clone https://github.com/umccr/cup-fhir-example.git
-cd cup-fhir-example
-pip install -e .
-```
-
-Then open the notebook. If `import cup_fhir` fails, the notebook's kernel is probably using a different Python from the terminal. In that case, run this in a notebook cell and then restart the kernel:
-
-```python
-%pip install -e ..
+pip install -e /path/to/cup-fhir-example
 ```
 
 ### Option C: just the package, no clone
