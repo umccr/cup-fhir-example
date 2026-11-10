@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cup-fhir"
+version = "0.1.0"
+description = "Load FHIR R4 Bundles from S3 into pandas DataFrames for exploration in Jupyter"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "boto3>=1.28",
+    "pandas>=2.0",
+    "fhir.resources>=7.1",
+    "ipykernel>=7.3.0",
+]
+
+[project.optional-dependencies]
+# Everything needed to run the notebooks locally
+notebook = [
+    "jupyterlab>=4",
+    "ipykernel>=6",
+]
+# Tooling for contributors
+dev = [
+    "pytest>=7",
+    "nbstripout>=0.7",
+    "nbclient>=0.9",
+    "ipykernel>=6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cup_fhir"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

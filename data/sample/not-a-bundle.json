@@ -1,0 +1,20 @@
+{
+  "resourceType": "Patient",
+  "id": "dave",
+  "identifier": [
+    {
+      "system": "http://example.org/fhir/mrn",
+      "value": "MRN004"
+    }
+  ],
+  "name": [
+    {
+      "family": "Lee",
+      "given": [
+        "Dave"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1990-07-07"
+}

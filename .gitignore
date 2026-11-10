@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data: never commit downloaded or real patient data
+data/*
+!data/sample/
+*.csv
+*.parquet
+
+# Local config / secrets
+.env
+.DS_Store
